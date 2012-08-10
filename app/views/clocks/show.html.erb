@@ -1,0 +1,32 @@
+<%= javascript_include_tag "raphael-min" %>
+<%= javascript_include_tag "clock" %>
+
+<html>
+<body>
+<p> The created clock is : </p>
+<input type="hidden" id="myval" value= <%= @clock.minutes_ahead %> /> 
+<%= @clock.name %>
+<%= @clock.minutes_ahead %>
+
+<div>
+<table border="1">
+	
+  <tr> <div id="clock_id" style="display:inline-block;"></div></tr>
+  <tr> <div style="padding: 0px 20px;"><h2> <span id="digi_clock"></span></h2></div></tr>
+ 
+  </table>
+</div>
+<div>
+	<%= link_to 'Back To List', clocks_path %>
+</div>
+<body>
+<html>
+
+<script type="text/javascript">
+var num=document.getElementById('myval').value;
+ var num1 = parseInt(num);
+  draw_clock(0,0+num1,0);
+  draw_clock(0,0,0);
+</script>
+
+

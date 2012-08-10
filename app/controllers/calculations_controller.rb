@@ -27,6 +27,7 @@ class CalculationsController < ApplicationController
     a = Operand.new(params[:a].to_f)
     b = Operand.new(params[:b].to_f)
     @result = a.operate(b, op)
+    @result = 0 if @result.nil?
   end
 
 end
